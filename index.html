@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f4f1e8 0%, #e8dcc0 50%, #d4c4a0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .invitation {
+            background: linear-gradient(145deg, #fefdfb 0%, #f9f7f4 100%);
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(139, 116, 88, 0.25), 0 5px 15px rgba(139, 116, 88, 0.15);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .invitation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #b8860b, #daa520, #b8860b);
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 25px 30px;
+            background: linear-gradient(135deg, #f5f2ed 0%, #ede8e0 100%);
+            position: relative;
+        }
+
+        .decorative-element {
+            font-size: 36px;
+            color: #b8860b;
+            margin-bottom: 15px;
+        }
+
+        .invitation-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            color: #3d3427;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 12px;
+            color: #8b7458;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .main-content {
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #3d3427;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .couple-names .and {
+            font-family: 'Great Vibes', cursive;
+            font-size: 26px;
+            color: #b8860b;
+            font-weight: 400;
+            margin: 0 10px;
+        }
+
+        .wedding-text {
+            font-size: 16px;
+            color: #6b5d4f;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .event-details {
+            background: linear-gradient(135deg, #f6f3ee 0%, #f0ede6 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 3px solid #b8860b;
+            box-shadow: 0 2px 8px rgba(139, 116, 88, 0.1);
+        }
+
+        .event-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-icon {
+            font-size: 20px;
+            color: #b8860b;
+            margin-bottom: 8px;
+        }
+
+        .event-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #3d3427;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .event-value {
+            font-size: 14px;
+            color: #5d4e3e;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .dress-code {
+            background: linear-gradient(135deg, #f9f6f0 0%, #f3efe7 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #d4c4a0;
+            box-shadow: 0 2px 6px rgba(139, 116, 88, 0.08);
+        }
+
+        .dress-code-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #3d3427;
+            margin-bottom: 8px;
+        }
+
+        .dress-code-text {
+            font-size: 13px;
+            color: #6b5d4f;
+        }
+
+        .rsvp-section {
+            text-align: center;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #f0ede6 0%, #ebe6dd 100%);
+        }
+
+        .rsvp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #3d3427;
+            margin-bottom: 12px;
+        }
+
+        .rsvp-text {
+            font-size: 13px;
+            color: #6b5d4f;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: #8b7458;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #3d3427 0%, #2a241a 100%);
+            color: #f4f1e8;
+        }
+
+        .footer-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #f4f1e8;
+        }
+
+        .footer-subtitle {
+            font-size: 11px;
+            opacity: 0.9;
+            color: #d4c4a0;
+        }
+
+        .hearts {
+            color: #b8860b;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        /* Photo Upload Section */
+        .photo-upload-section {
+            background: linear-gradient(135deg, #f6f3ee 0%, #f0ede6 100%);
+            border-radius: 12px;
+            padding: 20px 15px 18px 15px;
+            border-left: 3px solid #b8860b;
+            box-shadow: 0 2px 8px rgba(139, 116, 88, 0.08);
+            text-align: center;
+        }
+
+        .photo-upload-title {
+            font-size: 16px;
+            color: #6b5d4f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .photo-upload-btn {
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .photo-upload-note {
+            font-size: 12px;
+            color: #8b7458;
+            margin-top: 7px;
+        }
+
+        .music-section {
+            background: linear-gradient(135deg, #f6f3ee 0%, #f0ede6 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 3px solid #b8860b;
+            box-shadow: 0 2px 8px rgba(139, 116, 88, 0.1);
+        }
+
+        .music-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #3d3427;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .music-subtitle {
+            font-size: 13px;
+            color: #6b5d4f;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .music-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .music-input {
+            padding: 12px;
+            border: 1px solid #d4c4a0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            background: rgba(255, 255, 255, 0.8);
+            color: #3d3427;
+            transition: border-color 0.3s ease;
+        }
+
+        .music-input:focus {
+            outline: none;
+            border-color: #b8860b;
+            box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.1);
+        }
+
+        .music-input::placeholder {
+            color: #8b7458;
+        }
+
+        .music-button {
+            background: linear-gradient(135deg, #b8860b 0%, #daa520 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .music-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+
+        .music-icon {
+            font-size: 20px;
+            color: #b8860b;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .gift-section {
+            background: linear-gradient(135deg, #f6f3ee 0%, #f0ede6 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0 0 0;
+            border-left: 3px solid #b8860b;
+            box-shadow: 0 2px 8px rgba(139, 116, 88, 0.08);
+            text-align: center;
+        }
+
+        .gift-icon {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+          .photo-icon {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .gift-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .photo-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .gift-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #3d3427;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .gift-subtitle {
+            font-size: 13px;
+            color: #6b5d4f;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .gift-bank-btn {
+            margin-bottom: 15px;
+        }
+
+        #bankData {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #3d3427;
+            background: #f9f6f0;
+            border-radius: 8px;
+            padding: 15px 10px;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        .location-button {
+            background: linear-gradient(135deg, #b8860b 0%, #daa520 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .location-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(184, 134, 11, 0.3);
+        }
+
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .rsvp-input {
+            padding: 12px;
+            border: 1px solid #d4c4a0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            background: rgba(255, 255, 255, 0.8);
+            color: #3d3427;
+            transition: border-color 0.3s ease;
+        }
+
+        .rsvp-input:focus {
+            outline: none;
+            border-color: #b8860b;
+            box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.1);
+        }
+
+        .rsvp-input::placeholder {
+            color: #8b7458;
+        }
+
+        .rsvp-button {
+            background: linear-gradient(135deg, #b8860b 0%, #daa520 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .rsvp-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+
+        /* Animaciones de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .slide-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .slide-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease-out;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Delays para crear efecto en cascada */
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        @media (min-width: 480px) {
+            .invitation {
+                max-width: 450px;
+                border-radius: 18px;
+            }
+
+            .header {
+                padding: 45px 30px 35px;
+            }
+
+            .main-content {
+                padding: 35px 30px;
+            }
+
+            .couple-names {
+                font-size: 36px;
+            }
+
+            .rsvp-section {
+                padding: 25px 30px;
+            }
+
+            .footer {
+                padding: 25px 30px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Funcionalidad del formulario de música
+            const musicForm = document.getElementById('musicForm');
+            const songInput = document.getElementById('songInput');
+            const nameInput = document.getElementById('nameInput');
+
+
+            const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScXsjgFfjqjMaE_oy7gB1fex8VonBHPHbC2INWtUl6YQnMDXw/formResponse';
+            const SONG_FIELD_ID = 'entry.828296928'; // ID real del campo "Cancion"
+            const NAME_FIELD_ID = 'entry.1638772418'; // ID real del campo "Nombre"
+
+            async function submitToGoogleForm(song, name) {
+                try {
+                    const formData = new FormData();
+                    formData.append(SONG_FIELD_ID, song);
+                    formData.append(NAME_FIELD_ID, name || 'Anónimo');
+
+                    // Enviar a Google Form en modo no-cors (no espera respuesta)
+                    await fetch(GOOGLE_FORM_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+
+                    return true;
+                } catch (error) {
+                    console.log('Error al enviar a Google Form:', error);
+                    return false;
+                }
+            }
+
+            musicForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const song = songInput.value.trim();
+                const name = nameInput.value.trim();
+
+                if (song) {
+                    const button = musicForm.querySelector('.music-button');
+                    const originalText = button.innerHTML;
+
+                    // Mostrar estado de carga
+                    button.innerHTML = '📤 Enviando...';
+                    button.disabled = true;
+
+                    // 1. Primero guardar en Google Form
+                    const formSaved = await submitToGoogleForm(song, name);
+
+                    // 2. Crear el mensaje para WhatsApp
+                    const message = name
+                        ? `🎵 Sugerencia musical para la boda de Vanesa & Pablo:\n\n"${song}"\n\nSugerido por: ${name}\n\n¡Gracias por ayudar a armar nuestra playlist! 💕`
+                        : `🎵 Sugerencia musical para la boda de Vanesa & Pablo:\n\n"${song}"\n\n¡Gracias por ayudar a armar nuestra playlist! 💕`;
+
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappNumber = '541127036045';
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                    // 3. Abrir WhatsApp
+                    window.open(whatsappUrl, '_blank');
+
+                    // 4. Mostrar confirmación
+                    if (formSaved) {
+                        button.innerHTML = '✅ ¡Guardado y enviado!';
+                    } else {
+                        button.innerHTML = '✅ ¡Enviado por WhatsApp!';
+                    }
+
+                    button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+
+                    // Limpiar campos
+                    songInput.value = '';
+                    nameInput.value = '';
+
+                    // Restaurar botón después de 3 segundos
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.background = 'linear-gradient(135deg, #b8860b 0%, #daa520 100%)';
+                        button.disabled = false;
+                    }, 3000);
+                }
+            });
+
+            // Funcionalidad del formulario de RSVP
+            const rsvpForm = document.getElementById('rsvpForm');
+            const rsvpNameInput = document.getElementById('rsvpNameInput');
+            const rsvpResponseInput = document.getElementById('rsvpResponseInput');
+            const rsvpGuestsInput = document.getElementById('rsvpGuestsInput');
+
+            rsvpForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = rsvpNameInput.value.trim();
+                const response = rsvpResponseInput.value;
+                const guests = rsvpGuestsInput.value;
+
+                if (name && response) {
+                    let message = `💌 Confirmación para la boda de Vanesa & Pablo:\n\n`;
+                    message += `👤 Nombre: ${name}\n`;
+
+                    if (response === 'si') {
+                        message += `✅ Respuesta: ¡Sí, voy a estar! 🎉\n`;
+                        if (guests) {
+                            message += `👥 Cantidad de personas: ${guests}\n`;
+                        }
+                        message += `\n¡Nos vemos el 1 de Noviembre! 💕`;
+                    } else {
+                        message += `❌ Respuesta: No voy a poder ir 😢\n`;
+                        message += `\n¡Gracias por avisar! Los queremos igual 💕`;
+                    }
+
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappNumber = '541127036045';
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                    window.open(whatsappUrl, '_blank');
+
+                    const button = rsvpForm.querySelector('.rsvp-button');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '✅ ¡Confirmado!';
+                    button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+
+                    rsvpNameInput.value = '';
+                    rsvpResponseInput.value = '';
+                    rsvpGuestsInput.value = '';
+
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.background = 'linear-gradient(135deg, #b8860b 0%, #daa520 100%)';
+                    }, 3000);
+                }
+            });
+
+            // Funcionalidad de animaciones de scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todos los elementos con clases de animación
+            const animatedElements = document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Cuenta regresiva
+            function updateCountdown() {
+                const eventDate = new Date('2025-11-01T21:00:00');
+                const now = new Date();
+                const diff = eventDate - now;
+                const countdown = document.getElementById('countdown');
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                    const seconds = Math.floor((diff / 1000) % 60);
+                    countdown.innerHTML = `
+                        <div style="display:flex; justify-content:center; gap:28px; align-items:flex-end;">
+                            <div style='display:flex; flex-direction:column; align-items:center;'>
+                                <span style='font-size:1.4em; font-weight:bold;'>${days.toString().padStart(2, '0')}</span>
+                                <span style='font-size:1em; color:#8b7458;'>Días</span>
+                            </div>
+                            <div style='display:flex; flex-direction:column; align-items:center;'>
+                                <span style='font-size:1.4em; font-weight:bold;'>${hours.toString().padStart(2, '0')}</span>
+                                <span style='font-size:1em; color:#8b7458;'>Hs</span>
+                            </div>
+                            <div style='display:flex; flex-direction:column; align-items:center;'>
+                                <span style='font-size:1.4em; font-weight:bold;'>${minutes.toString().padStart(2, '0')}</span>
+                                <span style='font-size:1em; color:#8b7458;'>Min</span>
+                            </div>
+                            <div style='display:flex; flex-direction:column; align-items:center;'>
+                                <span style='font-size:1.4em; font-weight:bold;'>${seconds.toString().padStart(2, '0')}</span>
+                                <span style='font-size:1em; color:#8b7458;'>s</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    countdown.innerHTML = '<span style="font-size:1.1em;font-weight:600;">¡Hoy es el gran día!</span>';
+                }
+            }
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const showMusicBtn = document.getElementById('showMusicFormBtn');
+            const musicForm = document.getElementById('musicForm');
+            if (showMusicBtn && musicForm) {
+                showMusicBtn.addEventListener('click', function () {
+                    if (musicForm.style.display === 'none' || musicForm.style.display === '') {
+                        musicForm.style.display = 'flex';
+                        showMusicBtn.innerHTML = '🙈 Ocultar formulario';
+                    } else {
+                        musicForm.style.display = 'none';
+                        showMusicBtn.innerHTML = '🎶 Sugerir canción';
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        // Mostrar/ocultar datos bancarios
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('showBankDataBtn');
+            const data = document.getElementById('bankData');
+            if (btn && data) {
+                btn.addEventListener('click', function () {
+                    if (data.style.display === 'none' || data.style.display === '') {
+                        data.innerHTML = `<b>Alias:</b> FAMILIA.LOVE.82<br><b>CVU:</b> 0000003100065026256754<br><b>Titular:</b> Vanesa Sanchez`;
+                        data.style.display = 'block';
+                        btn.innerHTML = '🙈 Ocultar datos bancarios';
+                    } else {
+                        data.style.display = 'none';
+                        btn.innerHTML = '💸 Ver datos bancarios';
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const showBtn = document.getElementById('showRsvpBtn');
+            const rsvpForm = document.getElementById('rsvpForm');
+            if (showBtn && rsvpForm) {
+                showBtn.addEventListener('click', function () {
+                    if (rsvpForm.style.display === 'none' || rsvpForm.style.display === '') {
+                        rsvpForm.style.display = 'flex';
+                        showBtn.innerHTML = '🙈 Ocultar formulario';
+                    } else {
+                        rsvpForm.style.display = 'none';
+                        showBtn.innerHTML = '✉️ Confirmar asistencia';
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="invitation" id="mainInvitation">
+        <div class="header">
+            <div class="decorative-element">
+                <img src="/img/boda.png"
+                    style="width:60px;height:60px;object-fit:contain;display:block;margin:0 auto;">
+            </div>
+            <h1 class="invitation-title">¡Nos Casamos!</h1>
+            <p class="subtitle">Te invitamos a nuestro Casamiento</p>
+        </div>
+
+        <div class="main-content">
+            <div class="couple-names fade-in">
+                Vanesa<span class="and">&</span>Pablo
+            </div>
+
+            <p class="wedding-text fade-in delay-1">
+                ¡Estamos re felices de compartir con vos uno de los días más importantes de nuestras vidas!
+                Te invitamos a festejar nuestra boda y ser parte de esta alegría.
+            </p>
+
+            <div class="event-details slide-left delay-2">
+                <div class="event-item">
+                    <div class="event-label">Te esperamos el día</div>
+                    <div class="event-value" style="font-size:16px;font-weight:600;">Sábado 1 de Noviembre de 2025</div>
+                    <div id="countdown" class="event-value" style="margin:10px 0 5px 0;font-size:20px;color:#b8860b;">
+                    </div>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamiento+Vanesa+y+Pablo&dates=20251101T210000Z/20251102T050000Z&details=¡Te+esperamos+en+Espacio+Filipa!+Av+Pres.+Perón+1090,+Haedo&location=Espacio+Filipa,+Av+Pres.+Perón+1090,+Haedo,+Buenos+Aires&sf=true&output=xml"
+                        target="_blank" class="location-button" style="margin-top:8px;display:inline-block;">📆 Agendar
+                        en calendario</a>
+                </div>
+
+
+                <div class="event-item">
+                    <div class="event-icon">
+                        <img src="/img/fiesta.gif"
+                            style="width:70px;height:70px;object-fit:contain;display:block;margin:0 auto;">
+                    </div>
+                    <div class="event-label">Fiesta</div>
+                    <div class="event-value">
+                        Espacio Filipa<br>
+                        Av Pres. Perón 1090, Haedo<br>
+                        21:00 hs
+                        <br>
+                        <a href="https://maps.google.com/?q=Espacio+Filipa,+Av+Pres.+Perón+1090,+Haedo,+Buenos+Aires"
+                            target="_blank" class="location-button">
+                            📍 Cómo llegar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dress-code slide-right delay-3">
+                <div class="dress-code-title">¿Cómo vestirse?</div>
+                <div class="dress-code-text">Elegante sport - Evitá el blanco que es de la novia 😉</div>
+            </div>
+
+            <div class="hearts scale-in delay-4">💕 💕 💕</div>
+
+            <!-- Sección de musica -->
+            <div class="music-section fade-in delay-5">
+                <div class="music-icon">
+                    <img src="/img/disco-ball.gif"
+                        style="width:70px;height:70px;object-fit:contain;display:block;margin:0 auto;">
+                </div>
+                <div class="music-title">¡Armemos juntos la playlist!</div>
+                <div class="music-subtitle">
+                    Ayudanos a crear la banda sonora perfecta para nuestra fiesta.
+                    ¡Sugerí tus temas favoritos!
+                </div>
+                <button id="showMusicFormBtn" class="music-button" style="margin-bottom:15px;">🎶 Sugerir
+                    canción</button>
+                <form class="music-form" id="musicForm" style="display:none;">
+                    <input type="text" class="music-input"
+                        placeholder="Nombre del tema y artista (ej: La Vida es una Lenteja - Manu Chao)" id="songInput"
+                        required>
+                    <input type="text" class="music-input" placeholder="Tu nombre (opcional)" id="nameInput">
+                    <button type="submit" class="music-button">
+                        🎶 Agregar a la playlist
+                    </button>
+                </form>
+
+            </div>
+            <!-- Sección de regalos -->
+            <div class="gift-section slide-left delay-2">
+                <div class="gift-icon">
+                    <img src="/img/sorpresa.gif" alt="Caja de regalo animada" class="gift-img">
+                </div>
+                <div class="gift-title">
+                    ¿Querés hacernos un regalo?
+                </div>
+                <div class="gift-subtitle">
+                    Si deseás hacernos un regalo, además de tu hermosa presencia
+                </div>
+                <button id="showBankDataBtn" class="music-button gift-bank-btn">
+                    💸 Ver datos bancarios
+                </button>
+                <div id="bankData"></div>
+            </div>
+
+            <div class="gift-section slide-left delay-2">
+                 <div class="gift-icon">
+                    <img src="/img/camara.gif" alt="camara animada" class="photo-img">
+                </div>
+                <div class="photo-upload-title">
+                    ¿Sacaste fotos en la fiesta o civil ?<br>
+                    ¡Subilas acá y compartí los recuerdos con todos!
+                </div>
+                <a href="https://drive.google.com/drive/folders/1V36KasgKnf0rP7nAJF1ILXZw5mqYjMkb" target="_blank"
+                    class="music-button photo-upload-btn">📸 Subir fotos</a>
+                <div class="photo-upload-note">(Podés subirlas desde tu celu o compu)</div>
+            </div>
+
+        </div>
+
+        <div class="rsvp-section slide-left">
+            <!-- Sección para subir fotos de las fiestas -->
+            <h3 class="rsvp-title">Confirmá tu asistencia</h3>
+            <div class="rsvp-icon">
+                <img src="/img/engagement.gif"
+                    style="width:70px;height:70px;object-fit:contain;display:block;margin:0 auto;">
+            </div>
+            <p class="rsvp-text">
+                ¡Dale! Confirmanos antes del 1 de Noviembre si venís
+            </p>
+            <button id="showRsvpBtn" class="rsvp-button" style="margin-bottom:15px;">✉️ Confirmar asistencia</button>
+            <form class="rsvp-form" id="rsvpForm" style="display:none;">
+                <input type="text" class="rsvp-input" placeholder="Tu nombre completo" id="rsvpNameInput" required>
+                <select class="rsvp-input" id="rsvpResponseInput" required>
+                    <option value="">¿Vas a venir?</option>
+                    <option value="si">¡Sí, ahí voy a estar! 🎉</option>
+                    <option value="no">No voy a poder ir 😢</option>
+                </select>
+                <input type="number" class="rsvp-input" placeholder="¿Cuántas personas van? (incluyéndote)"
+                    id="rsvpGuestsInput" min="1">
+                <button type="submit" class="rsvp-button">
+                    ✅ Confirmar asistencia
+                </button>
+            </form>
+
+        </div>
+
+        <div class="footer scale-in">
+            <div class="footer-text">¡Te esperamos para festejar!</div>
+            <div class="footer-subtitle">Vanesa & Pablo</div>
+        </div>
+    </div>
+    <script>
+    // Animación de entrada para la invitación principal
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('mainInvitation').classList.add('animate-in');
+        }, 80);
+    });
+    </script>
+</body>
+
+</html>
