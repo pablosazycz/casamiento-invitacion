@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/estado-civil.png">
     <title>Invitación de Boda</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
@@ -346,7 +347,7 @@
             margin-bottom: 10px;
         }
 
-          .photo-icon {
+        .photo-icon {
             text-align: center;
             margin-bottom: 10px;
         }
@@ -358,6 +359,7 @@
             display: block;
             margin: 0 auto;
         }
+
         .photo-img {
             width: 70px;
             height: 70px;
@@ -806,8 +808,7 @@
     <div class="invitation" id="mainInvitation">
         <div class="header">
             <div class="decorative-element">
-                <img src="img/boda.png"
-                    style="width:60px;height:60px;object-fit:contain;display:block;margin:0 auto;">
+                <img src="img/boda.png" style="width:60px;height:60px;object-fit:contain;display:block;margin:0 auto;">
             </div>
             <h1 class="invitation-title">¡Nos Casamos!</h1>
             <p class="subtitle">Te invitamos a nuestro Casamiento</p>
@@ -823,17 +824,37 @@
                 Te invitamos a festejar nuestra boda y ser parte de esta alegría.
             </p>
 
+
             <div class="event-details slide-left delay-2">
                 <div class="event-item">
-                    <div class="event-label">Te esperamos el día</div>
+                    <div class="event-icon">
+                        <img src="img/civil.png"
+                            style="width:70px;height:70px;object-fit:contain;display:block;margin:0 auto;">
+                    </div>
+                    <div class="event-label">¡Acompañanos en el Civil!</div>
+                    <div class="event-value" style="font-size:16px;font-weight:600;">Viernes 31 de Octubre de 2025</div>
+                    <div class="event-value" style="font-size:15px;">10:30 hs</div>
+                    <div class="event-value" style="margin-bottom:6px;">Sede Comunal 14<br>Beruti 3325, CABA</div>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Civil+Vanesa+y+Pablo&dates=20251031T103000Z/20251031T113000Z&details=¡Acompañanos+en+el+Civil!+Sede+Comunal+14,+Beruti+3325,+CABA&location=Sede+Comunal+14,+Beruti+3325,+CABA&sf=true&output=xml"
+                        target="_blank" class="location-button" style="margin-top:8px;display:inline-block;">📆
+                        Agendar</a>
+                    <a href="https://www.google.com/maps/place/Sede+Comunal+14/@-34.5873016,-58.4098784,18z/data=!4m6!3m5!1s0x95bccb989a6cf453:0x89681de26c491743!8m2!3d-34.5872464!4d-58.4093337!16s%2Fg%2F1tgxk76w?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="location-button" style="margin-top:8px;display:inline-block;">📍 Cómo
+                        llegar</a>
+                </div>
+            </div>
+
+
+            <div class="event-details slide-left delay-2">
+                <div class="event-item">
+                    <div class="event-label">¡No te pierdas la fiesta!</div>
                     <div class="event-value" style="font-size:16px;font-weight:600;">Sábado 1 de Noviembre de 2025</div>
                     <div id="countdown" class="event-value" style="margin:10px 0 5px 0;font-size:20px;color:#b8860b;">
                     </div>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamiento+Vanesa+y+Pablo&dates=20251101T210000Z/20251102T050000Z&details=¡Te+esperamos+en+Espacio+Filipa!+Av+Pres.+Perón+1090,+Haedo&location=Espacio+Filipa,+Av+Pres.+Perón+1090,+Haedo,+Buenos+Aires&sf=true&output=xml"
-                        target="_blank" class="location-button" style="margin-top:8px;display:inline-block;">📆 Agendar
-                        en calendario</a>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamiento+Vanesa+y+Pablo&dates=20251101T210000Z/20251102T050000Z&details=¡No+te+pierdas+la+fiesta!+Espacio+Filipa,+Av+Pres.+Perón+1090,+Haedo&location=Espacio+Filipa,+Av+Pres.+Perón+1090,+Haedo,+Buenos+Aires&sf=true&output=xml"
+                        target="_blank" class="location-button" style="margin-top:8px;display:inline-block;">📆
+                        Agendar</a>
                 </div>
-
 
                 <div class="event-item">
                     <div class="event-icon">
@@ -844,7 +865,7 @@
                     <div class="event-value">
                         Espacio Filipa<br>
                         Av Pres. Perón 1090, Haedo<br>
-                        21:00 hs
+                        21:00 hs a 01:00 hs
                         <br>
                         <a href="https://maps.google.com/?q=Espacio+Filipa,+Av+Pres.+Perón+1090,+Haedo,+Buenos+Aires"
                             target="_blank" class="location-button">
@@ -903,7 +924,7 @@
             </div>
 
             <div class="gift-section slide-left delay-2">
-                 <div class="gift-icon">
+                <div class="gift-icon">
                     <img src="img/camara.gif" alt="camara animada" class="photo-img">
                 </div>
                 <div class="photo-upload-title">
@@ -919,7 +940,7 @@
 
         <div class="rsvp-section slide-left">
             <!-- Sección para subir fotos de las fiestas -->
-            <h3 class="rsvp-title">Confirmá tu asistencia</h3>
+            <h3 class="rsvp-title">Confirmá tu asistencia a la fiesta!</h3>
             <div class="rsvp-icon">
                 <img src="img/engagement.gif"
                     style="width:70px;height:70px;object-fit:contain;display:block;margin:0 auto;">
@@ -950,12 +971,12 @@
         </div>
     </div>
     <script>
-    // Animación de entrada para la invitación principal
-    window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            document.getElementById('mainInvitation').classList.add('animate-in');
-        }, 80);
-    });
+        // Animación de entrada para la invitación principal
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.getElementById('mainInvitation').classList.add('animate-in');
+            }, 80);
+        });
     </script>
 </body>
 
